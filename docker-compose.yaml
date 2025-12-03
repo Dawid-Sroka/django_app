@@ -1,0 +1,13 @@
+services:
+  backend:
+    profiles:
+      - backend
+    build:
+      context: .
+      target: backend_release
+      dockerfile: Dockerfile
+    working_dir: /
+    ports:
+      - "8000:8000"
+    entrypoint:
+      - ./start.sh
